@@ -1,0 +1,243 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'inter', "Helvetica Neue", Helvetica, sans-serif;
+
+}
+html {
+    scroll-behavior: smooth;
+  }
+body{
+    background-color: #ffffff;
+}
+header{
+    position: absolute;
+    right: 0;
+    left: 0;
+}
+.logo img{
+    width: 60px;
+}
+header nav {
+    margin: 1rem;
+    padding: 1rem 3rem 1rem 3rem;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background:#0c0c0c;
+    border-radius: 10px;
+    
+}
+header nav ul{
+
+   
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1rem;
+}
+
+header nav ul img{
+
+   width: 25px;
+   opacity: .7;
+}
+header nav ul img:hover{
+
+   transition: .3s ease;
+    opacity: 1;
+ }
+
+ .back-video {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: auto;
+    z-index: -999;
+}
+
+section {
+    width: 100%;
+    height: auto;
+    background-color: rgb(246, 246, 246);
+    
+    
+}
+.page-title {
+    width: 100%;
+    height: auto;
+    background-color: rgb(246, 246, 246);
+    border-radius: 10px 10px 0 0;
+
+    
+}
+.main-page-text{
+    text-align: center;
+    color: #fff;
+    font-size: 4rem;
+    position: absolute;
+    bottom: 2rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+}
+.main-page-text-container{
+  position: relative;
+    
+}
+
+.text-container{
+    padding: 2rem;
+
+    border-radius: 10px;
+}
+
+.text{
+    text-align: center;
+    color: #000;
+    font-family: Inter;
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: capitalize;
+}
+.product-section{
+    height: 700vh;
+    background-color: #f1f1f1;
+}
+#searchbar-container{
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+}
+#search-bar {
+    width: 500px;
+    background-color: #000000;
+    color: #d1d1d1;
+    padding: .45rem 2rem;
+    height: 50px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    line-height: 1.15;
+    box-shadow: 0px 10px 20px -18px;
+  }
+  
+  #search-bar:focus {
+    border-bottom: 2px solid #91BBCA;
+    border-radius: 10px;
+
+  }
+  
+  #search-bar:hover {
+    outline: 1px solid lightgrey;
+  }
+  .cards-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content: center;
+    justify-items: center;
+    align-items: flex-start;
+    grid-gap: 20px; 
+    padding: 8rem;
+  }
+  .card {
+    height: 30rem;
+    width: 100%;
+    padding: 0rem;
+    background: #000;
+  
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .image-container {
+    height: calc(100% - 30%);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .card img {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    bottom: 0;
+    transition: transform 0.3s ease;
+  }
+  
+  .card:hover img {
+    transform: scale(1.1);
+  }
+  
+  .details {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: #fff;
+  }
+  
+  .product-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .price {
+    font-size: 1.2rem;
+  }
+  
+@media screen and (max-width:1000px  ) {
+    .back-video video{
+        position: sticky;
+        top: 0;
+        width: 200%;
+        height: auto;
+        z-index: -999;
+        overflow: hidden;
+    }
+    .main-page-text{
+        text-align: center;
+        color: #fff;
+        font-size: 2rem;
+        position: absolute;
+        bottom: 10rem;
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
+    .main-page-text-container{
+      position: relative;
+    
+    }
+    .text{
+        text-align: center;
+        
+        font-family: Inter;
+        font-size: 2rem;
+        
+    }
+    .cards-container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        grid-gap: 20px; 
+        padding: 2rem;
+    }
+    .card{
+        height: 30rem;
+        width:100% ;
+        padding: 0rem;
+        background: #000;
+        border-radius: 9px;
+      }
+      .card img {
+        width: 100%;
+        height: auto;
+        position: absolute;
+        bottom: 0;
+        transition: transform 0.3s ease;
+      }
+      
+}
