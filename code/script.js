@@ -1,22 +1,27 @@
-console.log("hello");
-document.addEventListener('DOMContentLoaded', function() {
-    // Get all links with the class 'smooth-scroll'
-    var smoothScrollLinks = document.querySelectorAll('.smooth-scroll');
-  
-    // Add smooth scrolling to each smooth scroll link
-    smoothScrollLinks.forEach(function(link) {
-      link.addEventListener('click', function(event) {
-        // Prevent default click behavior
-        event.preventDefault();
-  
-        // Get the target element's ID from the link's href attribute
-        var targetId = this.getAttribute('href');
-  
-        // Scroll smoothly to the target element
-        document.querySelector(targetId).scrollIntoView({
-          behavior: 'smooth'
-        });
-      });
-    });
-  });
-  
+
+  // _____________________________________________________________________________
+    let http = new XMLHttpRequest();
+
+    http.open('GET', 'products.json', true);
+    http.send();
+    http.onload = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            let products = JSON.parse(this.responseText);
+            let output = '';
+
+            for (let item of products) {
+                output += ` 
+                    <div class="card">
+                        <div class="image-container">
+                            <img src="${item.image}" alt="Product Image">
+                        </div>
+                        <div class="details">
+                            <div class="product-name">${item.productname}</div>
+                            <div class="price" ">${item.price}</div>
+                        </div> 
+                    </div>
+                `;
+            }
+            document.querySelector(".cards-container").innerHTML = output;
+        }
+    }

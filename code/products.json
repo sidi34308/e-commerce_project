@@ -1,0 +1,35 @@
+[
+    {
+        
+        "image": "media/pic1.jpg",
+        "productname":"Black jeans",
+        "price":"99.00 QR"
+        
+    },
+    {
+        
+        "image": "media/pic3.jpg",
+        "productname":"White jeans",
+        "price":"89.00 QR"
+        
+    },
+    {
+        
+        "image": "media/pic5.jpg",
+        "productname":"Bag",
+        "price":"129.00 QR"
+        
+    },
+    {
+        
+        "image": "media/pic6.webp",
+        "productname":"Hat",
+        "price":"69.00 QR"
+        
+    }
+    
+    
+    
+    
+
+]
