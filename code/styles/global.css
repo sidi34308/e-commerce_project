@@ -106,7 +106,7 @@ section {
 }
 .product-section{
     height: 700vh;
-    background-color: #f1f1f1;
+    background-color: rgb(246, 246, 246);
 }
 #searchbar-container{
     display: flex;
