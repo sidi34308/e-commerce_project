@@ -246,22 +246,25 @@ section {
       
 }
 .body2{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  grid-template-areas: 
-  "head head head"
-  "body con2 body"
-  "head head head";
-  background-color: #d1d1d1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #000000;
+
 }
 .container2{
-  grid-area: "con2";
+  display: flex;
+  justify-content: center;
+  
   background-color: rgb(255, 255, 255);
   margin: 1rem;
   border-radius: 10px;
-	min-height: 70vh;
-  min-width: 50vh;
+	max-width: 700vh;
+  min-width: 100vh;
+  max-height: 10vh;
+  min-height: 50vh;
+
 
 }
 .login{
