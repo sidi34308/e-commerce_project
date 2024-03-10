@@ -17,11 +17,13 @@ header{
     left: 0;
 }
 .logo img{
-    width: 60px;
+
+    width:60px;
+
 }
 header nav {
     margin: 1rem;
-    padding: 1rem 3rem 1rem 3rem;
+    padding: 1rem 1rem 1rem 2rem;
     list-style: none;
     display: flex;
     justify-content: space-between;
@@ -50,6 +52,7 @@ header nav ul img:hover{
    transition: .3s ease;
     opacity: 1;
  }
+ 
 
  .back-video {
     position: sticky;
@@ -241,4 +244,26 @@ section {
         transition: transform 0.3s ease;
       }
       
+}
+.body2{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas: 
+  "head head head"
+  "body con2 body"
+  "head head head";
+  background-color: #d1d1d1;
+}
+.container2{
+  grid-area: "con2";
+  background-color: rgb(255, 255, 255);
+  margin: 1rem;
+  border-radius: 10px;
+	min-height: 70vh;
+  min-width: 50vh;
+
+}
+.login{
+  
 }
