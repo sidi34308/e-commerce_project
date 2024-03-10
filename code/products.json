@@ -26,6 +26,13 @@
         "productname":"Hat",
         "price":"69.00 QR"
         
+    },
+    {
+        "id":4,
+        "image": "media/pic5.jpg",
+        "productname":"Hat",
+        "price":"60.00 QR"
+        
     }
     
     
