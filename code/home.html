@@ -6,11 +6,14 @@
     <title>Home page</title>
     <link rel="stylesheet" href="styles/global.css">
     <link rel="icon" type="image/png" href="media/icons/small-logo (Custom).png">
-    <link rel="script" href="">
-  </head>
-
+    <head>
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+        />
+      </head>
+</head>
 <body>
-    
     <header>
         <nav>
             <div class="logo">
@@ -21,7 +24,7 @@
                     <a href="#searchbar-container" class="smooth-scroll"><img src="media/icons/search-icon.png" alt=""></a>
                 </li>
                 <li>
-                    <a href=""><img src="media/icons/cart-icon.png" alt=""></a>
+                    <a href="#" class="icon-cart"><img src="media/icons/cart-icon.png" alt=""><span>0</span></a>
                 </li>
                 <li>
                     <a href=""><img src="media/icons/account-icon.png" alt=""></a>
@@ -29,35 +32,51 @@
             </ul>
         </nav>
     </header>
-   
-    <main>
-        
-        <video autoplay loop muted plays-inline class="back-video" >
 
-            <source src="media/background-vid-2.mp4" type="video/mp4">
-
-        </video>
+    <video autoplay loop muted plays-inline class="back-video">
+        <source src="media/background-vid-2.mp4" type="video/mp4">
+    </video>
 
     <section class="page-title">
         <div class="text-container">
-            <h1 class="text"> <span style="color:#91BBCA ;">Explore</span> our latest collection designed for the bold and fearless.</h1>
-
+            <h1 class="text animate__animated animate__zoomIn"> <span style="color:#91BBCA ;">Explore</span> our latest collection designed for the bold and fearless.</h1>
         </div>
     </section>
+
     <section class="product-section">
         <div id="searchbar-container">
             <input id="search-bar" name="text" placeholder="Search..." type="search">
         </div>
         <div class="cards-container">
-
-           
+            <!-- Cards will be dynamically generated here -->
         </div>
     </section>
-    </main>
+
+    <div class="cart-tab">
+        <h1>Shopping Cart</h1>
+        <div class="listcart">
+            <!-- Cart items will be dynamically generated here -->
+        </div>
+        <div class="cart-total">
+            <p> Order Total: <span id="cart-total">0</span> QR</p>
+        </div>
+        <div class="btn">
+            <button class="close">Close</button>
+            <button class="checkout">Checkout</button>
+            
+        </div>
+    </div>
+
     <footer>
-
+        <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+        <p>&copy; 2024 capfashion. All rights reserved.</p>
     </footer>
-    <script src="script.js"></script>
 
+    <script src="script.js"></script>
 </body>
 </html>
