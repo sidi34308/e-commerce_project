@@ -91,8 +91,16 @@ window.addEventListener('load', function() {
                                 <div class="cart-content">
                                     <h4>${product.productname}</h4> 
                                     <div class="cart_card_price">Price: ${product.price} QR</div>
+                                    <div class="quantity-dropdown" data-id="${cartItem.product_Id}">
                                     <label for="quantity">Quantity:</label>
-                                    <input type="number" id="quantity" name="quantity" min="1" value="${cartItem.quantity}">
+                                                    
+                                    <select class="quantity-select" data-id="${cartItem.product_Id}" name="quantity">`;
+                                    // Generate options for quantity dropdown
+                                    for (let i = 1; i <= product.quantity; i++) {
+                                        cartHTML += `<option value="${i}" ${i === cartItem.quantity ? 'selected' : ''}>${i}</option>`;
+                                    }
+                                    cartHTML += `</select>
+                                    </div>
                                     <div class="remove" data-id="${cartItem.product_Id}">
                                         <img src="media/Remove.png"></img>
                                     </div>
@@ -105,6 +113,27 @@ window.addEventListener('load', function() {
 
                 document.querySelector('.listcart').innerHTML = cartHTML;
                 
+                const quantitySelects = document.querySelectorAll('.quantity-select');
+                quantitySelects.forEach(select => {
+                    select.addEventListener('change', function() {
+                        const productId = this.getAttribute('data-id');
+                        const selectedQuantity = parseInt(this.value);
+                        // Now you can use productId and selectedQuantity as needed
+                        console.log('Product ID:', productId);
+                        console.log('Selected Quantity:', selectedQuantity);
+                
+                        // Update the quantity of the item in the cart
+                        cart.forEach(item => { 
+                            if (item.product_Id === productId) { // Adjust this comparison according to your cart item structure
+                                item.quantity = selectedQuantity;
+                            }
+                        });
+                
+                        // Refresh total price and cart counter
+                        refreshTotalprice(cart);
+                        refreshCartCounter();
+                    });
+                });
                 let removeButtons = document.querySelectorAll('.remove');
                 removeButtons.forEach(removeButton => {
                     removeButton.addEventListener('click', () => {

@@ -4,20 +4,24 @@
         "image": "media/pic1.jpg",
         "productname":"Black jeans",
         "price":"99.00",
-        "balance":"99.00"
+        "quantity":10,
+        "seller_ID":1
+        
     },
     {
         "id":1,
         "image": "media/pic3.jpg",
         "productname":"White jeans",
-        "price":"89.00"
+        "price":"89.00",
+        "quantity":9
         
     },
     {
         "id":2,
         "image": "media/pic5.jpg",
         "productname":"Bag",
-        "price":"129.00"
+        "price":"129.00",
+        "quantity":2
         
     }, 
     {
@@ -31,8 +35,8 @@
         "id":4,
         "image": "media/pic5.jpg",
         "productname":"Hat",
-        "price":"79.00"
-        
+        "price":"79.00",
+        "quantity":1
     }
     ,
     {

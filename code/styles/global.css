@@ -428,6 +428,49 @@ body.activeTabCart .cart-tab{
     text-decoration: none;
   }
   
+  .cart-card {
+    display: flex;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 10px;
+  }
+  
+  .cart-card img {
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+  }
+  
+  .cart-content {
+    flex: 1;
+    position: relative;
+  }
+  
+  .cart-content h4 {
+    margin: 0;
+    margin-bottom: 10px;
+  }
+  
+  .quantity-dropdown select {
+    padding: 5px;
+    margin-left: 4px;
+    border-radius: 5px;
+  }
+  
+  .remove img {
+    width: 25px;
+    height: auto;
+    cursor: pointer;
+    position: absolute;
+    bottom: 0;
+}
+  
+  #cart-total {
+    font-weight: bold;
+    margin-top: 20px;
+  }
+  
 @media screen and (max-width:1000px  ) {
     .back-video video{
         position: sticky;
