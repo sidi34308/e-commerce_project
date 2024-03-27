@@ -1,0 +1,20 @@
+[
+    {
+        "name":"Ibrahim",
+        "email": "is1807372@qu",
+        "password":"123",
+        "balance":"2000"
+
+        
+    },
+    {
+        "name":"Sidi",
+        "email": "sidi@qu",
+        "password":"321",
+        "balance":"5000"
+
+        
+    }
+
+    
+]

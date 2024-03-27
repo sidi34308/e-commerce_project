@@ -223,3 +223,15 @@ window.addEventListener('load', function() {
 });
 
 
+ const checkoutButton = document.querySelector('.checkout');
+        checkoutButton.addEventListener('click', () => {
+            const balance = 1000; // Example user's balance
+            const cartTotal = parseInt(document.querySelector('#cart-total').innerHTML);
+            if (balance >= cartTotal) {
+                alert('Checkout successful!');
+                // Here you can implement further actions like updating the user's balance, clearing the cart, etc.
+            } else {
+                alert('Insufficient balance! Please add funds to your account.');
+            }
+        });
+
