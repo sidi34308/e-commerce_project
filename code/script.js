@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", function() {
     // Functionality to toggle cart visibility
     const body = document.querySelector('body');
@@ -23,25 +22,45 @@ window.addEventListener('load', function() {
     http.onload = function() {
         if (this.readyState == 4 && this.status == 200) {
             const products = JSON.parse(this.responseText);
-            let output = '';
+            displayProducts(products); // Display all products initially
 
-            for (const item of products) {
-                output += `
-                    <div class="card ">
-                        <div class="image-container">
-                            <img src="${item.image}" alt="Product Image">
-                        </div>
-                        <div class="details">
-                            <div class="product-name">${item.productname}</div>
-                            <div class="price">${item.price} QR</div>
-                        </div>
-                        <div class="addCart" data-id="${item.id}">
-                            <button>Add to cart</button>
-                        </div>
-                    </div>`;
-            }
+            const searchInput = document.getElementById('search-bar');
+            searchInput.addEventListener('keyup', function() {
+                filterProducts(products, this.value.toLowerCase()); // Filter products based on search input
+            });
+        }
+    };
 
-            document.querySelector(".cards-container").innerHTML = output;
+    function displayProducts(products) {
+        let output = '';
+
+        for (const item of products) {
+            output += `
+                <div class="card ">
+                    <div class="image-container">
+                        <img src="${item.image}" alt="Product Image">
+                    </div>
+                    <div class="details">
+                        <div class="product-name">${item.productname}</div>
+                        <div class="price">${item.price} QR</div>
+                    </div>
+                    <div class="addCart" data-id="${item.id}">
+                        <button>Add to cart</button>
+                    </div>
+                </div>`;
+        }
+
+        document.querySelector(".cards-container").innerHTML = output;
+    }
+
+    function filterProducts(products, searchText) {
+        const filteredProducts = products.filter(product => product.productname.toLowerCase().includes(searchText));
+        displayProducts(filteredProducts);
+    }
+
+            // Cart functionality
+           
+
 
             // Cart functionality
             let cart = [];
@@ -169,6 +188,5 @@ window.addEventListener('load', function() {
                 
             };
            
-        }
-    };
+        
 });
