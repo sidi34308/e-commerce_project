@@ -69,6 +69,22 @@ window.addEventListener('load', function() {
 
             // Cart functionality
             let cart = [];
+            const checkoutButton = document.querySelector('.checkout');
+            checkoutButton.addEventListener('click', () => {
+                const balance = 1000; 
+                const cartTotal = parseInt(document.querySelector('#cart-total').innerHTML);
+    
+                if (cart[0] == null){
+                    alert('You did not order anything!');}
+    
+                else if (balance >= cartTotal) {
+                    alert('Checkout successful!');}
+    
+                    
+                else {
+                    alert('Insufficient balance! Please add funds to your account.');}
+                
+            });
 
             const refreshCartCounter = () => {
                 const totalQuantity = cart.reduce((total, item) => total + item.quantity, 0);
@@ -219,21 +235,12 @@ window.addEventListener('load', function() {
             
         }
 
+
         
 });
 
 
- const checkoutButton = document.querySelector('.checkout');
-        checkoutButton.addEventListener('click', () => {
-            const balance = 1000; 
-            const cartTotal = parseInt(document.querySelector('#cart-total').innerHTML);
-            if (balance >= cartTotal) {
-                alert('Checkout successful!');
 
-            } else {
-                alert('Insufficient balance! Please add funds to your account.');
-            }
-        });
 
 
         function scrollToImage() {
