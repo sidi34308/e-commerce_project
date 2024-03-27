@@ -48,9 +48,21 @@ window.addEventListener('load', function() {
                         <button>Add to cart</button>
                     </div>
                 </div>`;
-        }
 
+            }
+            if (output == ''){
+                output += `
+                <div class="err">
+                <h1 class = "noitemfound"{
+                    ">No Item Found!</h1>
+                </div>`;
+
+        }
         document.querySelector(".cards-container").innerHTML = output;
+
+
+
+        
     }
 
     function filterProducts(products, searchText) {
