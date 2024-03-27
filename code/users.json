@@ -1,0 +1,39 @@
+[
+    {
+      "type": "customer",
+      "id": 3,
+      "name": "Alice Johnson",
+      "past_purchases": ["1", "3", "5"],
+      "password": "pass1234",
+      "balance": 600,
+      "image": "media/profile images/image1.png"
+    },
+    {
+      "type": "customer",
+      "id": 6,
+      "name": "Bob Williams",
+      "past_purchases": ["2", "4"],
+      "password": "customerpass",
+      "balance": 900,
+      "image": "media/profile images/image2.png"
+    },
+    {
+      "type": "seller",
+      "id": 6,
+      "name": "Ahmed ali",
+      "products": ["3", "4", "5"],
+      "password": "sellerpass1213",
+      "balance": 1800,
+      "image": "media/profile images/image3.png"
+    },
+    {
+      "type": "seller",
+      "id": 7,
+      "name": "Seller 4",
+      "products": ["1", "5"],
+      "password": "sellerpass1415",
+      "balance": 2200,
+      "image": "media/profile images/image4.png"
+    }
+  ]
+  

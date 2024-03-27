@@ -105,7 +105,7 @@ section {
 .page-title {
     width: 100%;
     height: auto;
-    background-color: rgb(246, 246, 246);
+    background-color: rgb(0, 0, 0);
     border-radius: 10px 10px 0 0;
 
     
@@ -131,11 +131,12 @@ section {
     padding: 2rem;
     height: 100vh;
     border-radius: 10px;
+    background-color: #000;
 }
 
 .text{
     text-align: center;
-    color: #000;
+    color: #ffffff;
     
     font-family: Inter;
     font-size: 6rem;
@@ -362,6 +363,7 @@ body.activeTabCart .cart-tab{
   bottom: 0;
   left: 0;
   width: 100%;
+  height: 30%;
   padding: 1rem;
   color: #fff;
   box-sizing: border-box;
@@ -430,7 +432,7 @@ body.activeTabCart .cart-tab{
   
   .cart-card {
     display: flex;
-    border: 1px solid #ddd;
+    border: 1px solid #8b8b8b;
     border-radius: 5px;
     margin-bottom: 10px;
     padding: 10px;
@@ -470,7 +472,275 @@ body.activeTabCart .cart-tab{
     font-weight: bold;
     margin-top: 20px;
   }
-  
+   .login-page {
+          
+            display: flex;
+            position: static;
+            top: 50px;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        .login-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: radial-gradient(54.41% 54.42% at 51.21% 45.59%, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.21) 100%), rgba(55, 55, 55, 0.23);
+            backdrop-filter: blur(16.649999618530273px);
+            z-index: 1;
+        }
+
+        .login-container {
+            display: none;
+            position: absolute;
+            padding:20px;
+            flex-shrink: 0;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            background-color: #b7b7b7;
+        
+            border-radius: 1.125rem;
+            border: 1px solid #E4E4E4;
+            background: #F1F1F1;
+            z-index: 2;
+        }
+
+        .login-container.active {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 10px;
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%) scale(1);
+      }
+      .login-image{
+        width: 80px;
+        height: auto;
+      }
+      .login-image img{
+        width: 100%;
+        
+      }
+        .info{
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+          width:250px;
+        }
+        .info p{
+          color: #494949;
+          text-align: center;
+          padding: 5px;
+          font-weight:400;
+        }
+
+        .login-input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background: #232323;
+            color: rgb(255, 255, 255);
+        }
+
+        .login-button {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: black;
+            color: white;
+            cursor: pointer;
+        }
+
+        .login-button:hover {
+            background-color: #71919d;
+        }
+
+        .cancel {
+           color: #000000;
+           opacity: .8;
+           border: none;
+           align-self: flex-start ;
+           font-weight: 600;
+        }
+
+        .cancel:hover {
+            opacity: 1;
+        }
+
+        
+/* .user-tab {
+  color: #ededed;
+  background: linear-gradient(180deg, rgba(241, 53, 53, 0.61) 0%, rgba(42, 42, 42, 0.72) 100%);
+  backdrop-filter: blur(13.5px);
+  width: 400px;
+  height: 700px;
+  max-width: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: grid;
+  grid-template-rows: 70px 1fr 70px 70px;
+  transition: 2s;
+  right: -800px;
+  text-transform: capitalize;
+  overflow: hidden;
+  z-index: 1000; /* Ensure the user tab appears above other content */
+/* } */ 
+/* 
+.user-tab h1 {
+  padding: 20px;
+  margin: 0;
+  font-weight: 400;
+}
+
+.user-tab .listcart {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  border-top: solid 1px #3d3d3d;
+}
+
+.user-tab .btn {
+  display: grid;
+  grid-template-columns: repeat(2, 2fr);
+  border: none;
+} */
+
+/* .user-tab .btn button {
+  background-color: #2b2b2b;
+  border: none;
+  color: #d1d1d1;
+} */
+/* 
+.user-tab .btn button:hover {
+  background-color: #151515;
+  border: none;
+  color: #d1d1d1;
+} */
+
+
+/* 
+body.activeTabUser .user-tab {
+  right: 0;
+}
+body.activeTabCart .user-tab {
+  transition: 1s;
+  transform: translateX(300px); /* Adjust this value to match the width of your content */
+/* } */
+/* 
+.user-tab  .closeUser {
+  background-color: #404040;
+  border: solid 1px #1d1d1d;
+  color: #d1d1d1;
+}
+
+.user-tab {
+  border-radius: 5px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+} */ 
+/* CSS Styles for user pop-up */
+#userPopup {
+  position: absolute;
+  top: calc(80% + 0px); /* Position below the icon */
+  right: 0;
+  transform: translateX(-20%);
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+  height: 300px;
+  gap: 7px;
+  display: none; /* Initially hidden */
+}
+#userPopup {
+  position: absolute;
+  top: calc(80% + 0px); /* Position below the icon */
+  right: 0;
+  transform: translateX(-20%);
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+  height: 300px;
+  gap: 7px;
+  display: none; /* Initially hidden */
+}
+#userPopup img {
+  width: 80px; /* Adjust size as needed */
+  height: auto; /* Adjust size as needed */
+  border-radius: 50%; /* Make it circular */
+  opacity: 1;
+}
+
+
+#userPopup .user-info {
+  text-align: center;
+}
+
+#userPopup .user-info h3 {
+  margin: 5px 0;
+}
+
+#userPopup .user-info p {
+  margin: 5px 0;
+  color: #666666;
+}
+#userPopup button {
+  margin: 5px 0;
+  color: #ffffff;
+  background-color: #000;
+  width: 100%;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+}
+#userPopup button:hover {
+  margin: 5px 0;
+  color: #ffffff;
+  background-color: #202020;
+  width: 100%;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+
+/* Show animation for pop-up */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+
 @media screen and (max-width:1000px  ) {
     .back-video video{
         position: sticky;
@@ -523,34 +793,4 @@ body.activeTabCart .cart-tab{
         transition: transform 0.3s ease;
       }
       
-}
-
-
-.body2{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  grid-template-areas: 
-  "head head head"
-  "body con2 body"
-  "head head head";
-  background-color: #d1d1d1;
-}
-.container2{
-  grid-area: "con2";
-  background-color: rgb(255, 255, 255);
-  margin: 1rem;
-  border-radius: 10px;
-	min-height: 70vh;
-  min-width: 50vh;
-
-}
-.info{
-
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: flex-start;
-  gap: 20px;
 }

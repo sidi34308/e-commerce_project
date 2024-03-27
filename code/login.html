@@ -7,30 +7,119 @@
     <link rel="stylesheet" href="styles/global.css">
     <link rel="icon" type="image/png" href="media/icons/small-logo (Custom).png">
     <link rel="script" href="">
-</head>
-<body class="body">
+    <style>
+        .login-page {
+            background-color: #d1d1d1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+        }
 
-    <div class="login-container"> 
-        <div class="login">
-          <img src="media/icons/logo.png" alt="logo" class="logo">
+        .login-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(54.41% 54.42% at 51.21% 45.59%, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.21) 100%), rgba(55, 55, 55, 0.23);
+            backdrop-filter: blur(16.649999618530273px);
+            z-index: 1;
+        }
+
+        .login-container {
+            display: none;
+            position: absolute;
+            width: 300px;
+            
+            flex-shrink: 0;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            background-color: #b7b7b7;
+            padding: 30px;
+            border-radius: 1.125rem;
+            border: 1px solid #E4E4E4;
+            background: #F1F1F1;
+            z-index: 2;
+        }
+
+        .login-container.active {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            transform: translate(-50%, -50%) scale(1);
+            
+        }
+        .info{
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        .login-input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background: #404040;
+            color: rgb(255, 255, 255);
+        }
+
+        .login-button {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: black;
+            color: white;
+            cursor: pointer;
+        }
+
+        .login-button:hover {
+            background-color: #45a049;
+        }
+
+        .cancel {
+           color: #000000;
+           opacity: .8;
+           border: none;
+        }
+
+        .cancel:hover {
+            opacity: 1;
+        }
+    </style>
+</head>
+<div class="login-page">
+    <button onclick="togglePopup()">Log in</button>
+    <div class="login-overlay" id="login-overlay" onclick="togglePopup()"></div>
+    <div class="login-container" id="popup-1">
+        <div class="login-image">
+            <img src="media/icons/account-black.png" alt="logo" class="logo">
         </div>
-      
+
         <div class="info">
-          <label for="uname"><b>Username</b></label>
-          <input type="text" placeholder="Enter Username" name="uname" required>
-          <label for="psw"><b>Password</b></label>
-          <input type="password" placeholder="Enter Password" name="psw" required>
-      
-          <button type="submit">Login</button>
-          <label>
-            <input type="checkbox" checked="checked" name="remember"> Remember me
-          </label>
+            <label for="uname"><b>Username</b></label>
+            <input class="login-input" type="text" placeholder="Enter Username" name="uname" required>
+            <label for="psw"><b>Password</b></label>
+            <input class="login-input" type="password" placeholder="Enter Password" name="psw" required>
+
+            <button class="login-button" type="submit">Login</button>
         </div>
-      
-        <div class="" style="background-color:#f1f1f1">
-          <button type="button" class="cancelbtn">Cancel</button>
-          <span class="psw">Forgot <a href="#">password?</a></span>
-        </div>
+        <button class="cancel" onclick="togglePopup()">X</button>
     </div>
-</body>
+   
+</div>
+<script>
+  function togglePopup() {
+      var overlay = document.getElementById("login-overlay");
+      var container = document.getElementById("popup-1");
+      overlay.style.display = container.classList.toggle("active") ? "block" : "none";
+  }
+</script>
 </html>
