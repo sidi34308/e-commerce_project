@@ -58,33 +58,13 @@ window.addEventListener('load', function() {
                 </div>`;
 
         }
+
         document.querySelector(".cards-container").innerHTML = output;
 
-
-
         
-    }
 
-    function filterProducts(products, searchText) {
-        const cardsContainer = document.querySelector(".cards-container");
-        
-        // Apply fade-out animation
-        cardsContainer.classList.add('fade-out');
-    
-        setTimeout(() => {
-            const filteredProducts = products.filter(product => product.productname.toLowerCase().includes(searchText));
-            displayProducts(filteredProducts);
-    
-            // Apply fade-in animation after a short delay
-            cardsContainer.classList.remove('fade-out');
-            cardsContainer.classList.add('fade-in');
-            
-            // Remove fade-in class after animation ends
-            cardsContainer.addEventListener('animationend', () => {
-                cardsContainer.classList.remove('fade-in');
-            }, { once: true });
-        }, 300); // Adjust the delay to match the animation duration
-    }
+
+
 
 
             // Cart functionality
@@ -213,5 +193,27 @@ window.addEventListener('load', function() {
                 
             };
            
+
+        }
+        function filterProducts(products, searchText) {
+            const cardsContainer = document.querySelector(".cards-container");
+            
+            // Apply fade-out animation
+            cardsContainer.classList.add('fade-out');
         
+            setTimeout(() => {
+                const filteredProducts = products.filter(product => product.productname.toLowerCase().includes(searchText));
+                displayProducts(filteredProducts);
+        
+                // Apply fade-in animation after a short delay
+                cardsContainer.classList.remove('fade-out');
+                cardsContainer.classList.add('fade-in');
+                
+                // Remove fade-in class after animation ends
+                cardsContainer.addEventListener('animationend', () => {
+                    cardsContainer.classList.remove('fade-in');
+                }, { once: true });
+            }, 300); // Adjust the delay to match the animation duration
+        }
 });
+
