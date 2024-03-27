@@ -194,25 +194,46 @@ window.addEventListener('load', function() {
                         <div class="price">${item.price} QR</div>
                     </div>
                     <div class="addCart" data-id="${item.id}">
-                        <button>Add to cart</button>
+                    <button onclick="showFloatText()">Add to Cart</button>
                     </div>
                 </div>`;
+
+            }
+            if (output == ''){
+                output += `
+                <div class="err">
+                <h1 class = "noitemfound"{
+                    ">No Item Found!</h1>
+                </div>`;
+
         }
 
         document.querySelector(".cards-container").innerHTML = output;
-    }
 
-    function filterProducts(products, searchText) {
-        const filteredProducts = products.filter(product => product.productname.toLowerCase().includes(searchText));
-        displayProducts(filteredProducts);
-    }
+        
 
-            // Cart functionality
-           
+
+
 
 
             // Cart functionality
             let cart = [];
+            const checkoutButton = document.querySelector('.checkout');
+            checkoutButton.addEventListener('click', () => {
+                const balance = 1000; 
+                const cartTotal = parseInt(document.querySelector('#cart-total').innerHTML);
+    
+                if (cart[0] == null){
+                    alert('You did not order anything!');}
+    
+                else if (balance >= cartTotal) {
+                    alert('Checkout successful!');}
+    
+                    
+                else {
+                    alert('Insufficient balance! Please add funds to your account.');}
+                
+            });
 
             const refreshCartCounter = () => {
                 const totalQuantity = cart.reduce((total, item) => total + item.quantity, 0);
@@ -290,6 +311,7 @@ window.addEventListener('load', function() {
 
                 document.querySelector('.listcart').innerHTML = cartHTML;
                 
+                
                 const quantitySelects = document.querySelectorAll('.quantity-select');
                 quantitySelects.forEach(select => {
                     select.addEventListener('change', function() {
@@ -346,5 +368,40 @@ window.addEventListener('load', function() {
                 
             };
            
+
+        }
+        function filterProducts(products, searchText) {
+            const cardsContainer = document.querySelector(".cards-container");
+            
+            // Apply fade-out animation
+            cardsContainer.classList.add('fade-out');
+        
+            setTimeout(() => {
+                const filteredProducts = products.filter(product => product.productname.toLowerCase().includes(searchText));
+                displayProducts(filteredProducts);
+        
+                // Apply fade-in animation after a short delay
+                cardsContainer.classList.remove('fade-out');
+                cardsContainer.classList.add('fade-in');
+                
+                // Remove fade-in class after animation ends
+                cardsContainer.addEventListener('animationend', () => {
+                    cardsContainer.classList.remove('fade-in');
+                }, { once: true });
+            }, 300); // Adjust the delay to match the animation duration
+
+            
+        }
+
+
         
 });
+
+
+
+
+
+        function scrollToImage() {
+            const imageElement = document.querySelector('.cards-container');
+            imageElement.scrollIntoView({ behavior: 'smooth'});
+        }
