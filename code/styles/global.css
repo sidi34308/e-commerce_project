@@ -59,8 +59,9 @@ header{
 header nav {
   position: fixed;
   z-index: 1; 
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); 
   width: 98%;
+  height: 60px;
     margin: 1rem;
     padding: 1rem 1rem 1rem 2rem;
     list-style: none;
@@ -79,7 +80,7 @@ header nav ul{
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    gap: 1rem;
+    gap: 2rem;
 }
 
 header nav ul img{
@@ -299,7 +300,7 @@ body.activeTabCart .cart-tab{
     padding: 2rem;
 }
 #search-bar {
-    width: 500px;
+    width: 300px;
     background-color: #000000;
     color: #d1d1d1;
     padding: .45rem 2rem;
@@ -309,11 +310,13 @@ body.activeTabCart .cart-tab{
     border: none;
     line-height: 1.15;
     box-shadow: 0px 10px 20px -18px;
+    border-bottom: 1px solid #cdcdcd;
+    border-radius: 30px;
   }
   
   #search-bar:focus {
-    border-bottom: 2px solid #91BBCA;
-    border-radius: 10px;
+    border-bottom: 1px solid #cdcdcd;
+    border-radius: 100px;
 
   }
   
