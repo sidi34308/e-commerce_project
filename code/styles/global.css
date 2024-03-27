@@ -54,12 +54,19 @@ header{
     width:60px;
 
 }
+
+
 header nav {
+  position: fixed;
+  z-index: 1; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+  width: 98%;
     margin: 1rem;
     padding: 1rem 1rem 1rem 2rem;
     list-style: none;
     display: flex;
     justify-content: space-between;
+    
     align-items: center;
     background:#0c0c0c;
     border-radius: 10px;
@@ -146,7 +153,7 @@ section {
 }
 .cart-tab{
   color:  #ededed;      
-
+z-index: 2;
   background: linear-gradient(180deg, rgba(37, 37, 37, 0.61) 0%, rgba(42, 42, 42, 0.72) 100%);
   backdrop-filter: blur(13.5px);
   width: 400px;
@@ -385,29 +392,22 @@ body.activeTabCart .cart-tab{
     
 }
 
+
 .addCart button {
-    background-color: #71919d;
-    color: #ededed;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: background-color 0.3s ease;
-    text-transform: uppercase;
-
+  background-color: #5992a7;
+  color: #ededed;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+  text-transform: uppercase;
 }
 
-.addCart button:hover {
-    background-color: #2c8951;
-}
 
-  footer {
-    background-color: #060606;
-    color: #373737;
-    text-align: center;
-    padding: 20px;
-  }
+
+
 
   footer ul {
     padding: 10PX;

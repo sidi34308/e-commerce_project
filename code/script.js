@@ -45,7 +45,7 @@ window.addEventListener('load', function() {
                         <div class="price">${item.price} QR</div>
                     </div>
                     <div class="addCart" data-id="${item.id}">
-                        <button>Add to cart</button>
+                    <button onclick="showFloatText()">Add to Cart</button>
                     </div>
                 </div>`;
 
@@ -137,6 +137,7 @@ window.addEventListener('load', function() {
 
                 document.querySelector('.listcart').innerHTML = cartHTML;
                 
+                
                 const quantitySelects = document.querySelectorAll('.quantity-select');
                 quantitySelects.forEach(select => {
                     select.addEventListener('change', function() {
@@ -214,6 +215,11 @@ window.addEventListener('load', function() {
                     cardsContainer.classList.remove('fade-in');
                 }, { once: true });
             }, 300); // Adjust the delay to match the animation duration
+
+            
         }
+
+        
 });
+
 
