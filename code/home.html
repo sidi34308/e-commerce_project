@@ -51,8 +51,18 @@
         <div class="text-container">
             <h1 class="text animate__animated animate__zoomIn"> <span style="color:#91BBCA ;">Explore</span> our latest collection designed for the bold and fearless.</h1>
         </div>
-    </section>
+        <div class="page-images">
+            <div>
+                <img src="media/Mask group.png" alt="">
+            </div>
+            <div>
+                <img src="media/Group 26.png" alt="">
 
+            </div>
+            
+        </div>
+    </section>
+    
     <section class="product-section">
         <div id="searchbar-container">
             <input id="search-bar" name="text" placeholder="Search..." type="search">
@@ -63,12 +73,12 @@
     </section>
 
     <div class="cart-tab">
-        <h1>Shopping Cart</h1>
+        <h1>My Cart</h1>
         <div class="listcart">
             <!-- Cart items will be dynamically generated here -->
         </div>
         <div class="cart-total">
-            <p> Order Total: <span id="cart-total">0</span> QR</p>
+            <p> Order Total: </p><p><span id="cart-total">0</span> QR</p>
         </div>
         <div class="btn">
             <button class="close">Close</button>
@@ -83,7 +93,7 @@
         
     <div class="login-overlay" id="login-overlay" onclick="togglePopup()"></div>
     <div class="login-container" id="popup-1">
-        <button class="cancel" onclick="togglePopup()">cancel</button>
+        <button class="cancel" >cancel</button>
             <div class="login-image">
                 <img src="media/icons/account-black.png" alt="logo" class="logo">
             </div>
@@ -94,6 +104,8 @@
                 <input class="login-input" type="text" placeholder="Enter Username" name="uname" required>
                 <label for="psw"><b>Password</b></label>
                 <input class="login-input" type="password" placeholder="Enter Password" name="psw" required>
+                <div id="login-error" style="display: none; color: rgb(99, 35, 35);">Incorrect username or password.</div>
+
     
                 <button class="login-button" >Login</button>
             </div>
