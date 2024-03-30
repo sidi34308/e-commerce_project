@@ -59,8 +59,8 @@ header nav {
     z-index: 1; 
     width: 98%;
     height: 60px;
-      margin: 1rem;
-      padding: 1rem 1rem 1rem 2rem;
+      margin: 10px;
+      padding: 1rem 1rem 1rem 1rem;
       list-style: none;
       display: flex;
       justify-content: space-between;
@@ -743,6 +743,22 @@ body.activeTabCart .cart-tab{
 
 
 @media screen and (max-width:1000px  ) {
+  header nav {
+    position: fixed;
+    z-index: 1; 
+    width: 98%;
+    height: 60px;
+      margin: 5px;
+      padding: 10;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      
+      align-items: center;
+      background:#0c0c0c;
+      border-radius: 10px;
+    
+}
   .page-images{
     width: 100%;
     display: block;
@@ -756,13 +772,14 @@ body.activeTabCart .cart-tab{
     margin: 10px;
   }
     .back-video video{
-        position: sticky;
-        top: 0;
-        width: 200%;
-        height: auto;
-        z-index: -999;
-        overflow: hidden;
+      display: none;
+      
+   
     }
+    .back-video {
+      display: none;
+  }
+  
     .main-page-text{
         text-align: center;
         color: #fff;
