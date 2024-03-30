@@ -93,11 +93,8 @@ document.addEventListener("DOMContentLoaded", function() {
     function removeProduct(event) {
         if (event.target.classList.contains('remove-product')) {
             const productId = parseInt(event.target.getAttribute('data-id'));
-
             products = products.filter(product => product.id !== productId);
-
             localStorage.setItem('products', JSON.stringify(products));
-
             displaySellerProducts();
         }
     }
@@ -109,4 +106,36 @@ document.addEventListener("DOMContentLoaded", function() {
 
     displaySellerInfo();
     displaySellerProducts();
+
+
+
+const searchInput = document.querySelector('#search-bar');
+searchInput.addEventListener('keyup', function() {
+    const searchText = this.value.toLowerCase();
+    filterSellerProducts(searchText);
+});
+
+function filterSellerProducts(searchText) {
+    const filteredProducts = products.filter(product =>
+        product.productname.toLowerCase().includes(searchText)
+    );
+    displaySellerProducts(filteredProducts); 
+}
+
+function displaySellerProducts(filteredProducts = products) {
+    let productsHTML = '';
+    filteredProducts.forEach(product => {
+        productsHTML += `
+            <div class="product">
+                <img src="${product.image}" alt="${product.productname}" />
+                <h3>${product.productname}</h3>
+                <p>Price: ${product.price} QR</p>
+                <p>Quantity: ${product.quantity}</p>
+                <button class="remove-product" data-id="${product.id}">Remove</button>
+            </div>
+        `;
+    });
+    productsContainer.innerHTML = productsHTML;
+}
+    
 });
