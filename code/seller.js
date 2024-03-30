@@ -41,6 +41,7 @@ document.addEventListener("DOMContentLoaded", function() {
             products.forEach(product => {
                 productsHTML += `
                     <div class="product">
+                    <img src="${product.image}" alt="${product.productname}" /> 
                         <h3>${product.productname}</h3>
                         <p>Price: ${product.price} QR</p>
                         <p>Quantity: ${product.quantity}</p>
@@ -53,6 +54,7 @@ document.addEventListener("DOMContentLoaded", function() {
             productsContainer.innerHTML = '<p>No products added yet.</p>';
         }
     }
+    
 
     function handleFormSubmit(event) {
         event.preventDefault();
