@@ -39,25 +39,48 @@ document.addEventListener("DOMContentLoaded", function() {
     loginButton.addEventListener('click', togglePopup);
    
 
+   
+   
+    // const storedUsers = JSON.parse(localStorage.getItem('users'));
+    // console.log("s", storedUsers.length); // Corrected from storedUsers.lenght to storedUsers.length
+    // if (!storedUsers || storedUsers.length==0) {
+    //     console.log("here")
+    //     const http_users = new XMLHttpRequest();
+    //     http_users.open('GET', 'users.json', true);
+    //     http_users.send();
+    
+    //     http_users.onload = () => {
+    //         if (this.readyState == 4 && this.status == 200) {
+    //             users = JSON.parse(this.responseText); 
+    //             console.log("Response from 'users.json':", users);
+    //             localStorage.setItem('users', JSON.stringify(users));
+    //             console.log("Users fetched from JSON file:", users);
+    //         }
+    //     };
+       
+    // } else {
+    //     users = storedUsers;
+    // }
+
     let users = [];
 
-    const storedUsers = JSON.parse(localStorage.getItem('users'));
-    
-    if (storedUsers !== null && storedUsers.length > 0) {
-        users = storedUsers;
-    } else {
+    const storedUsers = localStorage.getItem('users');
+    if (!storedUsers) {
         const http_users = new XMLHttpRequest();
         http_users.open('GET', 'users.json', true);
         http_users.send();
-    
-        http_users.onload = () => {
+
+        http_users.onload = function() {
             if (this.readyState == 4 && this.status == 200) {
-                users = JSON.parse(this.responseText); 
+                users = JSON.parse(this.responseText);
                 localStorage.setItem('users', JSON.stringify(users));
-                console.log("Users fetched from JSON file:", users);
             }
         };
+    } else {
+        users = JSON.parse(storedUsers);
     }
+
+    
     
     console.log("All users:", users);
     
@@ -209,7 +232,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
         let products = [];
         const storedProducts = localStorage.getItem('products');
-
         if (storedProducts) {
             products = JSON.parse(storedProducts);
             renderFilteredProducts(products);
@@ -226,7 +248,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
             };
         }
-        
+
         function renderFilteredProducts(filteredProducts) {
             let output = '';
             for (const item of filteredProducts) {
