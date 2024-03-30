@@ -5,7 +5,7 @@
         "productname":"Black jeans",
         "price":"99.00",
         "quantity":10,
-        "seller_ID":1
+        "seller_ID":3
         
     },
     {
@@ -13,37 +13,41 @@
         "image": "media/pic3.jpg",
         "productname":"White jeans",
         "price":"89.00",
-        "quantity":9
-        
+        "quantity":9,
+        "seller_ID":3
     },
     {
         "id":2,
         "image": "media/pic5.jpg",
         "productname":"Bag",
         "price":"129.00",
-        "quantity":2
-        
+        "quantity":10,
+        "seller_ID":3
     }, 
     {
         "id":3,
         "image": "media/pic6.webp",
         "productname":"Hat",
-        "price":"69.00"
-        
+        "price":"69.00",
+        "quantity":10,
+        "seller_ID":1
     },
     {
         "id":4,
         "image": "media/pic5.jpg",
         "productname":"Hat",
         "price":"79.00",
-        "quantity":1
+        "quantity":10,
+        "seller_ID":3
     }
     ,
     {
         "id":5,
         "image": "media/pic6.webp",
         "productname":"Hat",
-        "price":"39.00"
+        "price":"39.00",
+        "quantity":10,
+        "seller_ID":3
         
     }
     ,
@@ -51,7 +55,9 @@
         "id":6,
         "image": "media/pic8.webp",
         "productname":"Regular Fit Textured-knit resort shirt",
-        "price":"69.00"
+        "price":"69.00",
+        "quantity":10,
+        "seller_ID":3
         
     }
     ,
@@ -59,7 +65,9 @@
         "id":7,
         "image": "media/pic9.webp",
         "productname":"Regular Fit Linen-mix trousers",
-        "price":"89.00"
+        "price":"89.00",
+        "quantity":10,
+        "seller_ID":3
         
     }
     ,
@@ -67,7 +75,9 @@
         "id":8,
         "image": "media/pic10.jpg",
         "productname":"Relaxed Jeans",
-        "price":"79.00"
+        "price":"79.00",
+        "quantity":10,
+        "seller_ID":3
         
     }
     ,
@@ -75,7 +85,9 @@
         "id":9,
         "image": "media/pic11.jpg",
         "productname":"Loose Jeans",
-        "price":"99.00"
+        "price":"99.00",
+        "quantity":10,
+        "seller_ID":3
         
     }
     ,
@@ -83,7 +95,9 @@
         "id":10,
         "image": "media/pic12.jpg",
         "productname":"Reglar Fit Cargo trousers",
-        "price":"120.00"
+        "price":"120.00",
+        "quantity":10,
+        "seller_ID":3
         
     }
     ,
@@ -91,7 +105,9 @@
         "id":11,
         "image": "media/pic8.webp",
         "productname":"Regular Fit Oxford shirt",
-        "price":"59.00"
+        "price":"59.00",
+        "quantity":10,
+        "seller_ID":3
         
     }
     

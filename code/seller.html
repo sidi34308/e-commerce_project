@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller Dashboard</title>
+    <link rel="icon" type="image/png" href="media/icons/small-logo (Custom).png">
+    <link rel="stylesheet" href="styles/seller.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="home.html"><img src="media/icons/logo.png" alt="logo"></a> 
+            </div>
+            <ul class="s">
+                <li><a href="home.html" class="active"></a></li>
+                <li><a href="#productForm"><img src="media/icons/add" alt=""></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <video autoplay loop muted playsinline class="back-video">
+        <source src="media/background-vid-2.mp4" type="video/mp4">
+    </video>
+
+    <section class="page-title">
+        <div class="text-container">
+            <h1 class="text animate_animated animate_zoomIn">Welcome to Your Dashboard</h1>
+        </div>
+    </section>
+
+    <section class="seller-info">
+        <h2>Seller Information</h2>
+        <div class="seller-container">
+            <!-- Seller information will be displayed here dynamically -->
+        </div>
+    </section>
+
+    <section class="seller-products">
+        <h2>Your Products</h2>
+        <div class="products-container">
+            <!-- Seller products will be displayed here dynamically -->
+        </div>
+    </section>
+
+    <!-- Form for adding a new product -->
+    <section class="add-product-section">
+        <h2>Add a New Product</h2>
+        <form id="productForm">
+            <div>
+                <label for="productName">Product Name:</label>
+                <input type="text" id="productName" placeholder="Enter product name">
+            </div>
+            <div>
+                <label for="productPrice">Product Price:</label>
+                <input type="number" id="productPrice" placeholder="Enter product price">
+            </div>
+            <div>
+                <label for="productQuantity">Product Quantity:</label>
+                <input type="number" id="productQuantity" placeholder="Enter product quantity">
+            </div>
+            <div>
+                <label for="productImage">Product Image:</label>
+                <input type="file" id="productImage" accept="image/*">
+            </div>
+            
+            <button type="submit">Add Product</button>
+        </form>
+        
+    </section>
+
+    <footer>
+        <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+        <p>&copy; 2024 capfashion. All rights reserved.</p>
+    </footer>
+
+    <script src="seller.js"></script>
+</body>
+</html>

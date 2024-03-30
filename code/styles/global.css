@@ -55,14 +55,19 @@ header{
 
 }
 header nav {
-    margin: 1rem;
-    padding: 1rem 1rem 1rem 2rem;
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background:#0c0c0c;
-    border-radius: 17px;
+    position: fixed;
+    z-index: 1; 
+    width: 98%;
+    height: 60px;
+      margin: 1rem;
+      padding: 1rem 1rem 1rem 2rem;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      
+      align-items: center;
+      background:#0c0c0c;
+      border-radius: 10px;
     
 }
 header nav ul{
@@ -148,7 +153,6 @@ section {
 .cart-tab{
   color:  #ededed;      
   background-color: #171717dc;
-  /* background: linear-gradient(180deg, rgba(37, 37, 37, 0.61) 0%, rgba(42, 42, 42, 0.72) 100%); */
   backdrop-filter: blur(13.5px);
   width: 400px;
   max-width: 100%;
@@ -159,6 +163,7 @@ section {
   bottom: 0;
   display: grid;
   grid-template-rows: 70px 1fr 70px 70px;
+  z-index: 1000;
 
 }
 .cart-tab h1{
@@ -319,10 +324,10 @@ body.activeTabCart .cart-tab{
 
   }
   #search-bar:-webkit-autofill {
-    border-bottom: 2px solid #91BBCA; /* Change border color */
-    border-radius: 10px; /* Optional: Adjust border radius */
-    background-color: #000000; /* Change background color */
-    color: #ffffff; /* Change text color */
+    border-bottom: 2px solid #91BBCA; 
+    border-radius: 10px; 
+    background-color: #000000; 
+    color: #ffffff;
   }
   #search-bar:hover {
     outline: 1px solid lightgrey;
@@ -556,10 +561,10 @@ body.activeTabCart .cart-tab{
         opacity: 1;
       }
       .login-input:-webkit-autofill {
-        border-bottom: 2px solid #282828; /* Change border color */
-        border-radius: 10px; /* Optional: Adjust border radius */
-        background-color: #000000; /* Change background color */
-        color: #ffffff; /* Change text color */
+        border-bottom: 2px solid #282828; 
+        border-radius: 10px; 
+        background-color: #000000; 
+        color: #ffffff; 
       }
         .info{
           display: flex;
@@ -625,87 +630,10 @@ body.activeTabCart .cart-tab{
             opacity: 1;
         }
 
-        
-/* .user-tab {
-  color: #ededed;
-  background: linear-gradient(180deg, rgba(241, 53, 53, 0.61) 0%, rgba(42, 42, 42, 0.72) 100%);
-  backdrop-filter: blur(13.5px);
-  width: 400px;
-  height: 700px;
-  max-width: 100%;
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  display: grid;
-  grid-template-rows: 70px 1fr 70px 70px;
-  transition: 2s;
-  right: -800px;
-  text-transform: capitalize;
-  overflow: hidden;
-  z-index: 1000; /* Ensure the user tab appears above other content */
-/* } */ 
-/* 
-.user-tab h1 {
-  padding: 20px;
-  margin: 0;
-  font-weight: 400;
-}
-
-.user-tab .listcart {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: 20px;
-  border-top: solid 1px #3d3d3d;
-}
-
-.user-tab .btn {
-  display: grid;
-  grid-template-columns: repeat(2, 2fr);
-  border: none;
-} */
-
-/* .user-tab .btn button {
-  background-color: #2b2b2b;
-  border: none;
-  color: #d1d1d1;
-} */
-/* 
-.user-tab .btn button:hover {
-  background-color: #151515;
-  border: none;
-  color: #d1d1d1;
-} */
-
-
-/* 
-body.activeTabUser .user-tab {
-  right: 0;
-}
-body.activeTabCart .user-tab {
-  transition: 1s;
-  transform: translateX(300px); /* Adjust this value to match the width of your content */
-/* } */
-/* 
-.user-tab  .closeUser {
-  background-color: #404040;
-  border: solid 1px #1d1d1d;
-  color: #d1d1d1;
-}
-
-.user-tab {
-  border-radius: 5px;
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-} */ 
-/* CSS Styles for user pop-up */
+   
 #userPopup {
   position: absolute;
-  top: calc(80% + 0px); /* Position below the icon */
+  top: calc(80% + 0px);
   right: 0;
   transform: translateX(-20%);
   background-color: #ffffff;
@@ -718,11 +646,11 @@ body.activeTabCart .user-tab {
   align-items: center;
   height: auto;
   gap: 7px;
-  display: none; /* Initially hidden */
+  display: none; 
 }
 #userPopup {
   position: absolute;
-  top: calc(80% + 0px); /* Position below the icon */
+  top: calc(80% + 0px); 
   right: 0;
   transform: translateX(-20%);
   background-color: #ffffff;
@@ -736,12 +664,12 @@ body.activeTabCart .user-tab {
   height: auto;
   width: auto;
   gap: 7px;
-  display: none; /* Initially hidden */
+  display: none; 
 }
 #userPopup img {
-  width: 80px; /* Adjust size as needed */
-  height: auto; /* Adjust size as needed */
-  border-radius: 50%; /* Make it circular */
+  width: 80px; 
+  height: auto; 
+  border-radius: 50%; 
   opacity: 1;
 }
 
@@ -801,8 +729,9 @@ body.activeTabCart .user-tab {
   border-bottom: solid 1px #d3d3d3; 
 
 }
-
-/* Show animation for pop-up */
+.err{
+  color: #ffffff;
+}
 @keyframes fadeIn {
   from {
       opacity: 0;

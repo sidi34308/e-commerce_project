@@ -1,7 +1,7 @@
 [
   {
       "type": "customer",
-      "id": 3,
+      "id": 1,
       "name": "Alice Johnson",
       "past_purchases": [
           {
@@ -30,7 +30,7 @@
   },
   {
       "type": "customer",
-      "id": 6,
+      "id": 2,
       "name": "Bob Williams",
       "past_purchases": [
           {
@@ -51,5 +51,31 @@
       "password": "customerpass",
       "balance": 900,
       "image": "media/profile images/image2.png"
-  }
+  },
+  {
+    "type": "seller",
+    "id": 3,
+    "name": "tom",
+    "past_purchases": [
+        {
+            "id": 2,
+            "image": "media/pic5.jpg",
+            "productname": "Bag",
+            "price": "129.00",
+            "quantity": 2
+        },
+        {
+            "id": 4,
+            "image": "media/pic5.jpg",
+            "productname": "Hat",
+            "price": "79.00",
+            "quantity": 1
+        }
+    ],
+    "password": "1234",
+    "balance": 0,
+    "image": "media/profile images/Photo by Good Faces.png"
+}
+
+  
 ]
