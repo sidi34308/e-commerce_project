@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function() {
     
 
 
-    let isPageReloaded = true;
+   
     const renderSignOut = (logged_in_user) => {
         console.log("Logging out...");
         logged_in_user = [];
