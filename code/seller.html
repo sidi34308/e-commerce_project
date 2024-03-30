@@ -15,6 +15,10 @@
             </div>
             <ul class="s">
                 <li><a href="home.html" class="active"></a></li>
+                <div id="searchbar-container">
+                    <input id="search-bar" name="text" placeholder="Search..." type="text" autocomplete="off">
+                </div>
+                
                 <li><a href="#productForm"><img src="media/icons/add" alt=""></a></li>
             </ul>
         </nav>
@@ -40,13 +44,17 @@
     <section class="seller-products">
         <h2>Your Products</h2>
         <div class="products-container">
-            <div class="cards-container">
-                <div class="product">
             <!-- Seller products will be displayed here dynamically -->
         </div>
-        </div>
+    </section>
+
+    <section class="sale-history">
+        <h2>Sale History</h2>
+        <div class="sale-history-container">
+            <!-- Sale history will be dynamically populated here -->
         </div>
     </section>
+    
 
     <!-- Form for adding a new product -->
     <section class="add-product-section">

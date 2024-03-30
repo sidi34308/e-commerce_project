@@ -1,34 +1,28 @@
 document.addEventListener("DOMContentLoaded", function() {
     const sellerContainer = document.querySelector('.seller-container');
     const productsContainer = document.querySelector('.products-container');
+    const saleHistoryContainer = document.querySelector('.sale-history-container'); // Container for sale history
     const productForm = document.getElementById('productForm');
     const successMessage = document.createElement('h4');
     successMessage.textContent = 'Product submitted successfully';
     successMessage.style.display = 'none';
 
     let users = [];
-    let cart = [];
     let products = [];
-    let logged_in_user = [];
+    let logged_in_user = {};
 
     const storedUsers = JSON.parse(localStorage.getItem('users'));
-    users = storedUsers ? storedUsers : [];
-    
-    const storedCart = JSON.parse(localStorage.getItem('cart'));
-    cart = storedCart ? storedCart : [];
+    users = storedUsers || [];
     
     const storedProducts = JSON.parse(localStorage.getItem('products'));
-    products = storedProducts ? storedProducts : [];
+    products = storedProducts || [];
     
     const retrievedUser = JSON.parse(localStorage.getItem('logged_in_user'));
-    logged_in_user = retrievedUser ? retrievedUser : [];
+    logged_in_user = retrievedUser || {};
 
     function displaySellerInfo() {
         if (logged_in_user && logged_in_user.name) {
-            const sellerInfoHTML = `
-                <p>Name: ${logged_in_user.name}</p>
-                <p>balance: ${logged_in_user.balance}</p>
-            `;
+            const sellerInfoHTML = `<p>Name: ${logged_in_user.name}</p><p>Balance: ${logged_in_user.balance}</p>`;
             sellerContainer.innerHTML = sellerInfoHTML;
         } else {
             sellerContainer.innerHTML = '<p>No seller information found.</p>';
@@ -36,36 +30,45 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function displaySellerProducts() {
-        if (products && products.length > 0) {
-            let productsHTML = '';
-            products.forEach(product => {
-                productsHTML += `
-                    <div class="product">
+        let productsHTML = '';
+        products.filter(product => product.seller_ID === logged_in_user.id).forEach(product => {
+            productsHTML += `
+                <div class="product">
                     <img src="${product.image}" alt="${product.productname}" /> 
-                        <h3>${product.productname}</h3>
-                        <p>Price: ${product.price} QR</p>
-                        <p>Quantity: ${product.quantity}</p>
-                        <button class="remove-product" data-id="${product.id}">Remove</button>
-                    </div>
-                `;
-            });
-            productsContainer.innerHTML = productsHTML;
-        } else {
-            productsContainer.innerHTML = '<p>No products added yet.</p>';
-        }
+                    <h3>${product.productname}</h3>
+                    <p>Price: ${product.price} QR</p>
+                    <p>Quantity: ${product.quantity}</p>
+                    <button class="remove-product" data-id="${product.id}">Remove</button>
+                </div>
+            `;
+        });
+        productsContainer.innerHTML = productsHTML || '<p>No products added yet.</p>';
     }
-    
+
+    function displaySalesHistory() {
+        let salesHTML = '';
+        const sellerSales = users.find(user => user.id === logged_in_user.id)?.past_purchases || [];
+        sellerSales.forEach(sale => {
+            salesHTML += `
+                <div class="sale-item">
+                    <img src="${sale.image}" alt="${sale.productname}" /> 
+                    <h3>${sale.productname}</h3>
+                    <p>Price: ${sale.price}</p>
+                    <p>Quantity Sold: ${sale.quantity}</p>
+                </div>
+            `;
+        });
+        saleHistoryContainer.innerHTML = salesHTML || '<p>No sales history available.</p>';
+    }
 
     function handleFormSubmit(event) {
         event.preventDefault();
-
         const productName = document.getElementById('productName').value;
         const productPrice = document.getElementById('productPrice').value;
         const productQuantity = document.getElementById('productQuantity').value;
         const productImage = document.getElementById('productImage').files[0];
 
         if (productName && productPrice && productQuantity && productImage) {
-            console.log("product url ",`media/${productImage.name}`);
             const newProduct = {
                 id: products.length,
                 image: `media/${productImage.name}`,
@@ -78,7 +81,6 @@ document.addEventListener("DOMContentLoaded", function() {
             products.push(newProduct);
             localStorage.setItem('products', JSON.stringify(products));
             successMessage.style.display = 'block';
-
             setTimeout(() => {
                 successMessage.style.display = 'none';
                 productForm.reset();
@@ -106,7 +108,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     displaySellerInfo();
     displaySellerProducts();
-
+    displaySalesHistory(); 
 
 
 const searchInput = document.querySelector('#search-bar');
@@ -137,5 +139,8 @@ function displaySellerProducts(filteredProducts = products) {
     });
     productsContainer.innerHTML = productsHTML;
 }
+
+
+
     
 });
