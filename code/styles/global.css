@@ -741,6 +741,39 @@ body.activeTabCart .cart-tab{
   }
 }
 
+#seller-dashboard-nav a {
+  display: inline-block;
+  padding: 8px 16px;
+  margin-left: 20px; 
+  background-color: #91BBCA; 
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
+#seller-dashboard-nav a:hover {
+  background-color: #729bad; 
+  color: #fff;
+  text-decoration: none;
+}
+
+
+.logged-in #seller-dashboard-nav a {
+  background-color: #4c8a9d; 
+}
+
+@media (max-width: 768px) {
+  #seller-dashboard-nav a {
+    padding: 8px 12px; 
+    margin-left: 10px;
+    font-size: 0.8em; 
+  }
+}
+
+
 
 @media screen and (max-width:1000px  ) {
   header nav {
@@ -822,5 +855,6 @@ body.activeTabCart .cart-tab{
         bottom: 0;
         transition: transform 0.3s ease;
       }
+    
       
 }

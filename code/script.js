@@ -86,10 +86,13 @@ document.addEventListener("DOMContentLoaded", function() {
     
 
 
+   
     const renderSignOut = (logged_in_user) => {
         console.log("Logging out...");
         logged_in_user = [];
+        updateNavigationBarForSeller();
         console.log("Logged-out user:", logged_in_user);
+        
     
         // Update user info in the UI
         const userPopup = document.getElementById("userPopup");
@@ -115,6 +118,8 @@ document.addEventListener("DOMContentLoaded", function() {
         localStorage.removeItem('logged_in_user');
         console.log("User logged out successfully!");
     };
+    
+    
     
     const renderLoginState = (logged_in_user) => {
         console.log(logged_in_user);
@@ -478,4 +483,20 @@ document.addEventListener("DOMContentLoaded", function() {
         localStorage.setItem('users', JSON.stringify(users));   
         refreshCartCounter();
         renderCart();
+
+
+   
+// Navigating to Dashboard for seller
+function updateNavigationBarForSeller() {
+    const dashboardNav = document.getElementById('seller-dashboard-nav');
+    if (logged_in_user && logged_in_user.type === "seller") {
+        dashboardNav.style.display = 'block'; 
+    } else {
+        dashboardNav.style.display = 'none'; 
+    }
+}
+
+updateNavigationBarForSeller();
+
+
 });
